@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //async call
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE, 1);
         String date = sdf.format(c.getTime());
 
         getLocation();
@@ -180,27 +182,29 @@ public class MainActivity extends AppCompatActivity {
             try {
                 URL url = new URL(String.format(OPEN_WEATHER_MAP_API, _lat, _lon));
                 HttpURLConnection connection =
-                        (HttpURLConnection)url.openConnection();
+                        (HttpURLConnection) url.openConnection();
 
                 connection.addRequestProperty("x-api-key", openWeatherMapApiKey);
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(connection.getInputStream()));
 
                 StringBuffer json = new StringBuffer(1024);
-                String tmp="";
-                while((tmp=reader.readLine())!=null)
+                String tmp = "";
+                while ((tmp = reader.readLine()) != null)
                     json.append(tmp).append("\n");
                 reader.close();
 
                 JSONObject data = new JSONObject(json.toString());
 
                 //checks to see if the request was a success
-                if(data.getInt("cod") != 200){
+                if (data.getInt("cod") != 200) {
                     return null;
                 }
 
-                return WeatherParser.parseJson(data, _date);
-
+                weatherObj = WeatherParser.parseJson(data, _date);
+                return weatherObj;
+            }catch(JSONException e) {
+                return weatherObj;
             }catch(Exception e){
                 return null;
             }

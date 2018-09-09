@@ -37,7 +37,7 @@ public class UnityPlayerActivity extends Activity
         UnityPlayer.UnitySendMessage("Scene Controller", "setHumidity", Integer.toString(deserializedWeatherObj.getHumidity()));
         UnityPlayer.UnitySendMessage("Scene Controller", "setPressure", Double.toString(deserializedWeatherObj.getPressure()));
         UnityPlayer.UnitySendMessage("Scene Controller", "setWindspeed", Double.toString(deserializedWeatherObj.getWindSpeed()));
-        UnityPlayer.UnitySendMessage("Scene Controller", "setRainVol", Double.toString(deserializedWeatherObj.getRain()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setRainVol", Double.toString(deserializedWeatherObj.getRain()) + " mm.");
         UnityPlayer.UnitySendMessage("Scene Controller", "setSnow", Double.toString(deserializedWeatherObj.getSnow()));
         UnityPlayer.UnitySendMessage("Scene Controller", "setWarning",
                 weatherPrecautionObj.getWarningAndPrecaution(deserializedWeatherObj.getWeatherId()));

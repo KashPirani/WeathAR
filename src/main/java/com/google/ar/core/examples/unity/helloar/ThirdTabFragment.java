@@ -42,7 +42,7 @@ public class ThirdTabFragment extends Fragment {
         dateText.setText("Date: " + deserializedWeatherObj.getDateTime());
         humidityText.setText("Humidity: " + deserializedWeatherObj.getHumidity());
         tempText.setText("Temperature: " + deserializedWeatherObj.getTempMax());
-        precipText.setText("Precipitation: " + deserializedWeatherObj.getPrecipitation());
+        precipText.setText("Precipitation: " + deserializedWeatherObj.getRain()+ " mm.");
 
         return v;
     }
