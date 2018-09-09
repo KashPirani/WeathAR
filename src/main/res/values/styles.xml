@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<resources>-->
+<!--<style name="UnityThemeSelector" parent="BaseUnityTheme">-->
+<!--<item name="android:windowBackground">@android:color/black</item>-->
+<!--</style>-->
+<!--<style name="BaseUnityTheme" parent="android:Theme.Holo.Light.NoActionBar.Fullscreen">-->
+<!--</style>-->
+<!--<style name="UnityThemeSelector.Translucent" parent="@style/UnityThemeSelector">-->
+<!--<item name="android:windowIsTranslucent">true</item>-->
+<!--<item name="android:windowBackground">@android:color/transparent</item>-->
+<!--</style>-->
+<!--</resources>-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">#3F51B5</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">#303F9F</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+</resources>
