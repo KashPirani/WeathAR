@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/dateImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/humidityImageView"
+        app:layout_constraintEnd_toStartOf="@+id/dateTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:srcCompat="@drawable/calendar" />
+
+    <ImageView
+        android:id="@+id/humidityImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tempImageView"
+        app:layout_constraintEnd_toStartOf="@+id/humidityTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateImageView"
+        app:srcCompat="@drawable/humidity" />
+
+    <ImageView
+        android:id="@+id/tempImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/precipImageView"
+        app:layout_constraintEnd_toStartOf="@+id/tempTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidityImageView"
+        app:srcCompat="@drawable/temp" />
+
+    <ImageView
+        android:id="@+id/precipImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/precipTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempImageView"
+        app:srcCompat="@drawable/pressure" />
+
+    <TextView
+        android:id="@+id/humidityTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="#005F71"
+        android:text="Humidity: "
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/humidityImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/humidityImageView"
+        app:layout_constraintTop_toTopOf="@+id/humidityImageView" />
+
+    <TextView
+        android:id="@+id/tempTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#00203B"
+        android:text="Temperature: "
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/precipTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tempImageView"
+        app:layout_constraintTop_toBottomOf="@+id/humidityImageView" />
+
+    <TextView
+        android:id="@+id/precipTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="#000C2A"
+        android:text="Precipitation: "
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/precipImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/precipImageView"
+        app:layout_constraintTop_toTopOf="@+id/precipImageView" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00A3AA"
+        android:fadingEdge="none|vertical"
+        android:text="Date: "
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dateImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateImageView"
+        app:layout_constraintTop_toTopOf="@+id/dateImageView" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00D3D3"
+        app:layout_constraintBottom_toTopOf="@+id/dateImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Warning: "
+        android:textColor="#ffff"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+</android.support.constraint.ConstraintLayout>

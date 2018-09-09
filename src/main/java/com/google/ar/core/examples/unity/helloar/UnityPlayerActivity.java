@@ -25,15 +25,22 @@ public class UnityPlayerActivity extends Activity
         mUnityPlayer = new UnityPlayer(this);
         setContentView(mUnityPlayer);
         mUnityPlayer.requestFocus();
-        UnityPlayer.UnitySendMessage("Scene Controller", "setWeatherCondition", "thunderstorm");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setDate", "2018-09-09");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setTemperature", "32");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setHumidity", "21");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setPressure", "21");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setWindspeed", "32");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setRainVol", "23");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setSnow", "23");
-        UnityPlayer.UnitySendMessage("Scene Controller", "setWarning", "23");
+
+        Bundle passedActivityBundle = getIntent().getExtras();
+        CurrentWeatherObj deserializedWeatherObj=
+                (CurrentWeatherObj) passedActivityBundle.getSerializable("weatherObj");
+        WeatherPrecautions weatherPrecautionObj = new WeatherPrecautions();
+
+        UnityPlayer.UnitySendMessage("Scene Controller", "setWeatherCondition", deserializedWeatherObj.getPrecipitation());
+        UnityPlayer.UnitySendMessage("Scene Controller", "setDate", deserializedWeatherObj.getDateTime());
+        UnityPlayer.UnitySendMessage("Scene Controller", "setTemperature", Double.toString(deserializedWeatherObj.getTempMax()) + " Celsius");
+        UnityPlayer.UnitySendMessage("Scene Controller", "setHumidity", Integer.toString(deserializedWeatherObj.getHumidity()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setPressure", Double.toString(deserializedWeatherObj.getPressure()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setWindspeed", Double.toString(deserializedWeatherObj.getWindSpeed()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setRainVol", Double.toString(deserializedWeatherObj.getRain()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setSnow", Double.toString(deserializedWeatherObj.getSnow()));
+        UnityPlayer.UnitySendMessage("Scene Controller", "setWarning",
+                weatherPrecautionObj.getWarningAndPrecaution(deserializedWeatherObj.getWeatherId()));
     }
 
     @Override protected void onNewIntent(Intent intent)

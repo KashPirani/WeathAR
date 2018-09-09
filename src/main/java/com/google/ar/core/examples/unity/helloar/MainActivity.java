@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Main"));
         tabLayout.addTab(tabLayout.newTab().setText("AR View"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.addTab(tabLayout.newTab().setText("About"));
+        tabLayout.addTab(tabLayout.newTab().setText("Data"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //async call
@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClicked(View v){
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getFragmentManager(),"Date Picker");
+
     }
 
     @Override

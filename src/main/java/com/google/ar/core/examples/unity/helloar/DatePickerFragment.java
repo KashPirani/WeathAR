@@ -44,6 +44,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
         }
 
+        getActivity().getIntent().putExtra("date", fragDate);
         ((MainActivity)getActivity()).fragGetWeather(fragDate);
     }
 }
