@@ -3,7 +3,7 @@ PennApps Project
 
 An app built in Android Studios and Unity.
 
-![landingpage](https://user-images.githubusercontent.com/20273088/45464311-05236200-b6de-11e8-8762-83dcc9660450.png)
+![landingpage2](https://user-images.githubusercontent.com/20273088/45464545-1f117480-b6df-11e8-8480-67b8028462a5.png)
 
 
 See our devpost here:
